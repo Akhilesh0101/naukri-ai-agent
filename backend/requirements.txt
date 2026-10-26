@@ -1,0 +1,23 @@
+# ---- Web framework ----
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+# ---- Data / validation ----
+pydantic==2.10.4
+pydantic-settings==2.7.1
+# ---- Database ----
+SQLAlchemy==2.0.36
+alembic==1.14.0
+psycopg[binary]==3.2.3
+# ---- Resume parsing ----
+PyMuPDF==1.25.1
+# ---- Scheduling ----
+APScheduler==3.11.0
+# ---- HTTP client (authorized fetching) ----
+httpx==0.28.1
+# ---- Optional AI (local, free) ----
+# sentence-transformers is heavy; install separately if you want semantic scoring.
+# sentence-transformers==3.3.1
+# ---- Testing ----
+pytest==8.3.4
+pytest-asyncio==0.25.0

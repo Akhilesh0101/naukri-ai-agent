@@ -1,0 +1,22 @@
+# Optional local development convenience. The app does NOT require Docker.
+# This runs only PostgreSQL; the backend and frontend run on your host.
+#
+#   docker compose up -d
+#   # then set DATABASE_URL in backend/.env to:
+#   #   postgresql+psycopg://naukri:naukri@127.0.0.1:5432/naukri_agent
+#
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: naukri_agent_db
+    environment:
+      POSTGRES_USER: naukri
+      POSTGRES_PASSWORD: naukri
+      POSTGRES_DB: naukri_agent
+    ports:
+      - "5432:5432"
+    volumes:
+      - naukri_pgdata:/var/lib/postgresql/data
+
+volumes:
+  naukri_pgdata:
